@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/coffee_masters_logo.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Coffee Masters service prototype</title>
+  </head>
+  <body>
+	<header>
+		<nav>
+			<div class="status products-status"><img title="Products" alt="P" src="/noun-coffee.png" /></div>
+			<div class="status cart-status inactive"><img title="Cart" alt="C" src="/noun-cart.png" /></div>
+			<div class="status confirm-status inactive"><img title="Confirm" alt="B" src="/noun-coffee.png" /></div>
+		</nav>
+		<div id="logo"><img src="/coffee_masters_logo.png" />Coffee Masters</div>
+	</header>
+    <main>
+		<section id="prod">
+			<form class="hidden">
+				<fieldset>
+					<legend>Temp</legend>
+					<input type="radio" name="temp" id="hot-temp">
+					<label>Hot</label>
+					<input type="radio" name="temp" id="cold-brew">
+					<label>Cold brew</label>
+					<input type="radio" name="temp" id="iced-temp">
+					<label>Iced</label>
+				</fieldset>
+				<details>
+					<summary>Foam</summary>
+
+					<fieldset disabled>
+						<legend></legend>
+					</fieldset>
+				</details>
+				<details>
+					<summary>Dairy</summary>
+				</details>
+				<details>
+					<summary>Non-Dairy</summary>
+				</details>
+				<details>
+					<summary>Creamer</summary>
+				</details>
+				<details>
+					<summary>Sweetener</summary>
+				</details>
+				<details>
+					<summary>Spice</summary>
+				</details>
+			</form>
+
+
+			<div class="add-ons">
+				<h4>Foam</h4>
+				<div class="btns foam-btns">
+					<button id="whip-cream">Whip cream</button>
+					<button id="salted-caramel-foam">Salted Caramel</button>
+					<button id="peppermint-foam">Peppermint</button>
+					<button id="strawberry-foam">Strawberry</button>
+					<button id="lavender-foam">Lavender</button>
+				</div>
+				<div class="btns foam-qty-btns inactive">
+					<button id="lite-foam">Lite foam</button>
+					<button id
+					<button id="extra-foam">Extra foam</button>
+				</div>
+				<h4>Dairy</h4>
+				<div class="btns">
+					<button id="milk">Milk</button>
+					<button id="chocolate-milk">Chocolate milk</button>
+					<button id="dulce-de-leche">Dulce de Leche</button>
+					<button id="sweetended-condensed-milk">Sweetened condensed milk</button>
+				</div>
+				<h4>Non-Dairy</h4>
+				<div class="btns">
+					<button id="oatmilk">Oatmilk</button>
+					<button id="almond-milk">Almond milk</button>
+					<button id="coconut-milk">Coconut milk</button>
+				</div>
+				<h4>Creamer</h4>
+				<div class="btns">
+					<button id="hazelnut">Hazelnut</button>
+					<button id="southern-butter-pecan">Southern Butter Pecan</button>
+					<button id="french-vanilla">French Vanilla</button>
+				</div>
+				<h4>Sweetener</h4>
+				<div class="btns">
+					<button id="sugar">Sugar</button>
+					<button id="honey">Honey</button>
+					<button id="vanilla-syrup">Vanilla syrup</button>
+					<button id="lavender-syrup">Lavender syrup</button>
+					<button id="pistachio-syrup">Pistachio syrup</button>
+					<button id="maple-syrup">Maple syrup</button>
+					<button id="pumpkin-syrup">Pumpkin syrup</button>
+				</div>
+				<h4>Spice</h4>
+				<div class="btns">
+					<button id=""></button>
+					<button id=""></button>
+					<button id=""></button>
+					<button id=""></button>
+					<button id=""></button>
+					<button id=""></button>
+				</div>
+			</div>
+			<div class="prod-grid">
+				<figure>
+					<img title="" alt="" src="" />
+					<figcaption>
+						<h3></h3>
+						<div class="size-btns"></div>
+						<div class=""></div>
+					</figcaption>
+				</figure>
+			</div>
+			<div class="feature-banner"></div>
+		</section>
+		<section id="cart"></section>
+		<section id="conf"></section>
+    </main>
+    <footer>
+		<span>coffee by Gregor Cresnar from <a href="https://thenounproject.com/browse/icons/term/coffee/" target="_blank" title="coffee Icons">Noun Project</a> (CC BY 3.0)</span>
+		<span>cart by Alfa Design from <a href="https://thenounproject.com/browse/icons/term/cart/" target="_blank" title="cart Icons">Noun Project</a> (CC BY 3.0)</span>
+		<span>bill by Arkinasi from <a href="https://thenounproject.com/browse/icons/term/bill/" target="_blank" title="bill Icons">Noun Project</a> (CC BY 3.0)</span>
+
+    </footer
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

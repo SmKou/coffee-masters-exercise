@@ -141,7 +141,7 @@ main {
 	background: transparent;
 }
 
-button.selected {
+.size-btns button.selected {
 	background: var(--focus-color);
 }
 

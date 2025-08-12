@@ -22,19 +22,19 @@ const selection = {
 const order = {}
 
 document.querySelectorAll("#prod figure").forEach(fig => {
-	fig.addEventListener("click", e => {
-		const id = e.id
-		Object.keys(size).forEach(size_abbr => {
-			const btn = document.createElement("button")
-			btn.setAttribute("title", size[size_abbr])
-			btn.append(document.createTextNode(size_abbr))
-			btn.addEventListener("click", () => {
-				document.querySelector("#prod form").classList.remove("hidden")
-				selection.item = id
-				selection.size = size_abbr
-			})
-			document.querySelector(`#${id} .size-btns`).append(btn)
+	const id = fig.id
+	Object.keys(size).forEach(size_abbr => {
+		const btn = document.createElement("button")
+		btn.setAttribute("title", size[size_abbr])
+		btn.append(document.createTextNode(size_abbr))
+		btn.addEventListener("click", () => {
+			const form = document.querySelector("#prod form")
+			if (form.classList.contains("hidden"))
+				form.classList.remove("hidden")
+			selection.item = id
+			selection.size = size_abbr
 		})
+		document.querySelector(`#${id} .size-btns`).append(btn)
 	})
 })
 
@@ -56,9 +56,9 @@ const addon_amount = (name) => {
 	})
 }
 
-document.querySelectorAll("#prod form details").forEach(details => {
-	details.addEventListener("change")
-})
+// document.querySelectorAll("#prod form details").forEach(details => {
+// 	details.addEventListener("change")
+// })
 
 document.querySelector("#prod form").addEventListener("submit", e => {
 	e.preventDefault()

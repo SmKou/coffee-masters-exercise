@@ -109,9 +109,8 @@ main {
 
 #prod figcaption {
 	height: 100%;
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
+	display: grid;
+	grid-template-rows: 3fr 1fr 1fr
 }
 
 #prod figcaption p {
@@ -135,14 +134,21 @@ main {
 	background: var(--box-background-color);
 }
 
+.size-btns {
+	margin-bottom: 12px;
+	display: flex;
+	justify-content: space-evenly;
+}
+
 .size-btns button {
-	border: var(--text-color);
-	color: var(--text-color);
+	border: 1px solid var(--focus-color);
+	border-radius: 10%;
+	color: var(--focus-color);
 	background: transparent;
 }
 
 .size-btns button.selected {
-	background: var(--focus-color);
+	background: var(--background-color);
 }
 
 .addons-ipt {

@@ -18,6 +18,7 @@
     <main>
 		<section id="prod">
 			<form class="hidden">
+				<button id="close-form-btn">X</button>
 				<fieldset>
 					<legend>Temp</legend>
 					<input id="hot-temp-opt" type="radio" name="temp" id="hot-temp" checked>
@@ -29,19 +30,28 @@
 				</fieldset>
 				<details id="foam-addon">
 					<summary>Foam</summary>
-					<input id="whip-foam-opt" type="checkbox" name="whip cream" />
-					<label for="whip-foam-opt">Whip cream</label>
-					<input id="lavender-foam-opt" type="checkbox" name="lavender foam" />
-					<label for="lavender-foam-opt">Lavender</label>
-					<input id="peppermint-foam-opt" type="checkbox" name="peppermint foam" />
-					<label for="peppermint-foam-opt">Peppermint</label>
-					<input id="salted-foam-opt" type="checkbox" name="salted caramel foam" />
-					<label for="salted-foam-opt">Salted Caramel</label>
-					<input id="strawberry-foam-opt" type="checkbox" name="strawberry foam" />
-					<label for="strawberry-foam-opt">Strawberry</label>
-					<fieldset disabled>
-						<legend>How much?</legend>
-					</fieldset>
+					<div class="options">
+						<div class="foam-opt">
+							<input id="whip-foam-opt" type="checkbox" name="whip cream" />
+							<label for="whip-foam-opt">Whip cream</label>
+						</div>
+						<div class="foam-opt">
+							<input id="lavender-foam-opt" type="checkbox" name="lavender foam" />
+							<label for="lavender-foam-opt">Lavender</label>
+						</div>
+						<div class="foam-opt">
+							<input id="peppermint-foam-opt" type="checkbox" name="peppermint foam" />
+							<label for="peppermint-foam-opt">Peppermint</label>
+						</div>
+						<div class="foam-opt">
+							<input id="salted-foam-opt" type="checkbox" name="salted caramel foam" />
+							<label for="salted-foam-opt">Salted Caramel</label>
+						</div>
+						<div class="foam-opt">
+							<input id="strawberry-foam-opt" type="checkbox" name="strawberry foam" />
+							<label for="strawberry-foam-opt">Strawberry</label>
+						</div>
+					</div>
 				</details>
 				<details id="dairy-addon">
 					<summary>Dairy</summary>
@@ -53,9 +63,6 @@
 					<label for="dulce-dairy-opt">Dulce de Leche</label>
 					<input id="scm-dairy-opt" type="checkbox" name="sweetened condensed milk" />
 					<label for="scm-dairy-opt">Sweetened Condensed Milk</label>
-					<fieldset disabled>
-						<legend>How much?</legend>
-					</fieldset>
 				</details>
 				<details id="nondairy-addon">
 					<summary>Dairy Alternatives</summary>
@@ -65,9 +72,6 @@
 					<label for="coconut-nondairy-opt">Coconut</label>
 					<input id="oatmilk-nondairy-opt" type="checkbox" name="oatmilk" />
 					<label for="oatmilk-nondairy-opt">Oatmilk</label>
-					<fieldset disabled>
-						<legend>How much?</legend>
-					</fieldset>
 				</details>
 				<details id="creamer-addon">
 					<summary>Creamer</summary>
@@ -97,9 +101,6 @@
 					<label for="pumpkin-syrup-opt">Pumpkin syrup</label>
 					<input id="vanilla-syrup-opt" type="checkbox" name="vanilla syrup" />
 					<label for="vanilla-syrup-opt">Vanilla syrup</label>
-					<fieldset disabled>
-						<legend>How much <span class="sweetener-addon"></span>?</legend>
-					</fieldset>
 				</details>
 				<details id="spice-addon">
 					<summary>Spice</summary>
@@ -119,11 +120,12 @@
 					<label for="nutmeg-spice-opt">Nutmeg</label>
 					<input id="vanilla-extract-opt" type="checkbox" name="vanilla extract" />
 					<label for="vanilla-extract-opt">Vanilla extract</label>
-					<fieldset disabled>
-						<legend>How much?</legend>
-					</fieldset>
 				</details>
-				<input type="submit">
+				<div class="form-btns">
+					<button id="cancel-btn">Cancel</button>
+					<input title="clear form" type="reset">
+					<input title="submit order" type="submit">
+				</div>
 			</form>
 			<div class="product-grid">
 				<figure id="coffee">

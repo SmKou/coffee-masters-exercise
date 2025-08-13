@@ -72,6 +72,8 @@ nav .status img, #logo img {
 	margin-right: 6px;
 }
 
+/* ------------------------- PRODUCT GRID */
+
 main {
 	width: 100vw;
 }
@@ -157,8 +159,80 @@ main {
 	opacity: 0;
 }
 
+/* --------------------------- ENTRY FORM */
+
+#prod form {
+	position: absolute;
+	width: 100%;
+	max-width: 400px;
+	padding: 24px;
+	border: 1px solid var(--text-color);
+	border-radius: 5%;
+	display: flex;
+	flex-direction: column;
+	z-index: 10;
+	background: var(--box-background-color);
+}
+
+#close-form-btn {
+	width: 36px;
+	height: 36px;
+	border: none;
+	border-radius: 50%;
+	align-self: flex-end;
+	vertical-align: center;
+	text-align: center;
+}
+
+#prod form fieldset,
+#prod form details {
+	margin-top: 18px;
+}
+
+#prod form details {
+	display: flex;
+}
+
+.options {
+	margin-left: 24px;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(120px, 1fr))
+}
+
+.foam-opt {
+	display: inline-block;
+}
+
+.form-btns {
+	margin-top: 24px;
+	display: flex;
+	justify-content: center;
+}
+
+.form-btns button,
+.form-btns input {
+	margin: 0 12px;
+	padding: 6px;
+	border: 1px solid var(--text-color);
+	border-radius: 10%;
+	color: var(--text-color);
+}
+
+#cancel-btn {
+	border-color: var(--focus-color);
+	color: var(--focus-color);
+}
+
+#cancel-btn:hover {
+	border-color: var(--text-color);
+	color: var(--text-color);
+}
+
 input[type=checkbox] + label {}
 input[type=checkbox]:checked + label {}
+
+/* ---------------------- FOOTER: CREDITS */
+
 
 footer {
 	width: 100%;

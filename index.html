@@ -1,12 +1,12 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/coffee_masters_logo.png" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Coffee Masters service prototype</title>
-  </head>
-  <body>
+<head>
+	<meta charset="UTF-8" />
+	<link rel="icon" type="image/svg+xml" href="/coffee_masters_logo.png" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Coffee Masters service prototype</title>
+</head>
+<body>
 	<header>
 		<nav>
 			<div class="status products-status"><img title="Products" alt="P" src="/noun-coffee.png" /></div>
@@ -15,7 +15,7 @@
 		</nav>
 		<div id="logo"><img src="/coffee_masters_logo.png" />Coffee Masters</div>
 	</header>
-    <main>
+	<main>
 		<section id="prod">
 			<form class="hidden">
 				<button id="close-form-btn">X</button>
@@ -31,96 +31,160 @@
 				<details id="foam-addon">
 					<summary>Foam</summary>
 					<div class="options">
-						<div class="foam-opt">
+						<div class="option">
 							<input id="whip-foam-opt" type="checkbox" name="whip cream" />
 							<label for="whip-foam-opt">Whip cream</label>
 						</div>
-						<div class="foam-opt">
+						<div class="option">
 							<input id="lavender-foam-opt" type="checkbox" name="lavender foam" />
 							<label for="lavender-foam-opt">Lavender</label>
 						</div>
-						<div class="foam-opt">
+						<div class="option">
 							<input id="peppermint-foam-opt" type="checkbox" name="peppermint foam" />
 							<label for="peppermint-foam-opt">Peppermint</label>
 						</div>
-						<div class="foam-opt">
+						<div class="option">
 							<input id="salted-foam-opt" type="checkbox" name="salted caramel foam" />
 							<label for="salted-foam-opt">Salted Caramel</label>
 						</div>
-						<div class="foam-opt">
+						<div class="option">
 							<input id="strawberry-foam-opt" type="checkbox" name="strawberry foam" />
 							<label for="strawberry-foam-opt">Strawberry</label>
 						</div>
 					</div>
 				</details>
+				<div id="foam-added"></div>
 				<details id="dairy-addon">
 					<summary>Dairy</summary>
-					<input id="milk-dairy-opt" type="checkbox" name="milk" />
-					<label for="milk-dairy-opt">Milk</label>
-					<input id="chocolate-dairy-opt" type="checkbox" name="chocolate" />
-					<label for="chocolate-dairy-opt">Chocolate milk</label>
-					<input id="dulce-dairy-opt" type="checkbox" name="dulce de leche" />
-					<label for="dulce-dairy-opt">Dulce de Leche</label>
-					<input id="scm-dairy-opt" type="checkbox" name="sweetened condensed milk" />
-					<label for="scm-dairy-opt">Sweetened Condensed Milk</label>
+					<div class="options">
+						<div class="option">
+							<input id="milk-dairy-opt" type="checkbox" name="milk" />
+							<label for="milk-dairy-opt">Milk</label>
+						</div>
+						<div class="option">
+							<input id="chocolate-dairy-opt" type="checkbox" name="chocolate" />
+							<label for="chocolate-dairy-opt">Chocolate milk</label>
+						</div>
+						<div class="option">
+							<input id="dulce-dairy-opt" type="checkbox" name="dulce de leche" />
+							<label for="dulce-dairy-opt">Dulce de Leche</label>
+						</div>
+						<div class="option">
+							<input id="scm-dairy-opt" type="checkbox" name="sweetened condensed milk" />
+							<label for="scm-dairy-opt">Sweetened Condensed Milk</label>
+						</div>
+					</div>
 				</details>
+				<div id="dairy-added"></div>
 				<details id="nondairy-addon">
 					<summary>Dairy Alternatives</summary>
-					<input id="almond-nondairy-opt" type="checkbox" name="almond" />
-					<label for="almond-nondairy-opt">Almond</label>
-					<input id="coconut-nondairy-opt" type="checkbox" name="coconut" />
-					<label for="coconut-nondairy-opt">Coconut</label>
-					<input id="oatmilk-nondairy-opt" type="checkbox" name="oatmilk" />
-					<label for="oatmilk-nondairy-opt">Oatmilk</label>
+					<div class="options">
+						<div class="option">
+							<input id="almond-nondairy-opt" type="checkbox" name="almond" />
+							<label for="almond-nondairy-opt">Almond</label>
+						</div>
+						<div class="option">
+							<input id="coconut-nondairy-opt" type="checkbox" name="coconut" />
+							<label for="coconut-nondairy-opt">Coconut</label>
+						</div>
+						<div class="option">
+							<input id="oatmilk-nondairy-opt" type="checkbox" name="oatmilk" />
+							<label for="oatmilk-nondairy-opt">Oatmilk</label>
+						</div>
+					</div>
 				</details>
+				<div id="nondairy-added"></div>
 				<details id="creamer-addon">
 					<summary>Creamer</summary>
-					<input id="vanilla-creamer-opt" type="checkbox" name="french vanilla" />
-					<label for="vanilla-creamer-opt">French Vanilla</label>
-					<input id="hazelnut-creamer-opt" type="checkbox" name="hazelnut" />
-					<label for="hazelnut-creamer-opt">Hazelnut</label>
-					<input id="butter-creamer-opt" type="checkbox" name="southern butter pecan" />
-					<label for="butter-creamer-opt">Southern Butter Pecan</label>
-					<fieldset disabled>
-						<legend>How much?</legend>
-					</fieldset>
+					<div class="options">
+						<div class="option">
+							<input id="vanilla-creamer-opt" type="checkbox" name="french vanilla" />
+							<label for="vanilla-creamer-opt">French Vanilla</label>
+						</div>
+						<div class="option">
+							<input id="hazelnut-creamer-opt" type="checkbox" name="hazelnut" />
+							<label for="hazelnut-creamer-opt">Hazelnut</label>
+						</div>
+						<div class="option">
+							<input id="butter-creamer-opt" type="checkbox" name="southern butter pecan" />
+							<label for="butter-creamer-opt">Southern Butter Pecan</label>
+						</div>
+					</div>
 				</details>
+				<div id="creamer-added"></div>
 				<details id="sweetener-addon">
 					<summary>Sweetener</summary>
-					<input id="sugar-sweetener-opt" type="checkbox" name="sugar" />
-					<label for="sugar-opt">Sugar</label>
-					<input id="honey-sweetener-opt" type="checkbox" name="honey" />
-					<label for="honey-opt">Honey</label>
-					<input id="lavender-syrup-opt" type="checkbox" name="lavender syrup" />
-					<label for="lavender-syrup-opt">Lavender syrup</label>
-					<input id="maple-syrup-opt" type="checkbox" name="maple syrup" />
-					<label for="maple-syrup-opt">Maple syrup</label>
-					<input id="pistachio-syrup-opt" type="checkbox" name="pistachio syrup" />
-					<label for="pistachio-syrup-opt">Pistachio syrup</label>
-					<input id="pumpkin-syrup-opt" type="checkbox" name="pumpkin syrup" />
-					<label for="pumpkin-syrup-opt">Pumpkin syrup</label>
-					<input id="vanilla-syrup-opt" type="checkbox" name="vanilla syrup" />
-					<label for="vanilla-syrup-opt">Vanilla syrup</label>
+					<div class="options">
+						<div class="option">
+							<input id="sugar-sweetener-opt" type="checkbox" name="sugar" />
+							<label for="sugar-opt">Sugar</label>
+						</div>
+						<div class="option">
+							<input id="honey-sweetener-opt" type="checkbox" name="honey" />
+							<label for="honey-opt">Honey</label>
+						</div>
+						<div class="option">
+							<input id="lavender-syrup-opt" type="checkbox" name="lavender syrup" />
+							<label for="lavender-syrup-opt">Lavender syrup</label>
+						</div>
+						<div class="option">
+							<input id="maple-syrup-opt" type="checkbox" name="maple syrup" />
+							<label for="maple-syrup-opt">Maple syrup</label>
+						</div>
+						<div class="option">
+							<input id="pistachio-syrup-opt" type="checkbox" name="pistachio syrup" />
+							<label for="pistachio-syrup-opt">Pistachio syrup</label>
+						</div>
+						<div class="option">
+							<input id="pumpkin-syrup-opt" type="checkbox" name="pumpkin syrup" />
+							<label for="pumpkin-syrup-opt">Pumpkin syrup</label>
+						</div>
+						<div class="option">
+							<input id="vanilla-syrup-opt" type="checkbox" name="vanilla syrup" />
+							<label for="vanilla-syrup-opt">Vanilla syrup</label>
+						</div>
+					</div>
 				</details>
+				<div id="sweetener-added"></div>
 				<details id="spice-addon">
 					<summary>Spice</summary>
-					<input id="allspice-spice-opt" type="checkbox" name="allspice" />
-					<label for="allspice-spice-opt">Allspice</label>
-					<input id="almond-extract-opt" type="checkbox" name="almond extract" />
-					<label for="almond-extract-opt">Almond extract</label>
-					<input id="cardamom-spice-opt" type="checkbox" name="cardamom" />
-					<label for="cardamom-spice-opt">Cardamom</label>
-					<input id="cayenne-spice-opt" type="checkbox" name="cayenne pepper" />
-					<label for="cayenne-spice-opt">Cayenne Pepper</label>
-					<input id="cinnamon-spice-opt" type="checkbox" name="cinnamon" />
-					<label for="cinnamon-spice-opt">Cinnamon</label>
-					<input id="ginger-spice-opt" type="checkbox" name="ginger" />
-					<label for="ginger-spice-opt">Ginger</label>
-					<input id="nutmeg-spice-opt" type="checkbox" name="nutmeg" />
-					<label for="nutmeg-spice-opt">Nutmeg</label>
-					<input id="vanilla-extract-opt" type="checkbox" name="vanilla extract" />
-					<label for="vanilla-extract-opt">Vanilla extract</label>
+					<div class="options">
+						<div class="option">
+							<input id="allspice-spice-opt" type="checkbox" name="allspice" />
+							<label for="allspice-spice-opt">Allspice</label>
+						</div>
+						<div class="option">
+							<input id="almond-extract-opt" type="checkbox" name="almond extract" />
+							<label for="almond-extract-opt">Almond extract</label>
+						</div>
+						<div class="option">
+							<input id="cardamom-spice-opt" type="checkbox" name="cardamom" />
+							<label for="cardamom-spice-opt">Cardamom</label>
+						</div>
+						<div class="option">
+							<input id="cayenne-spice-opt" type="checkbox" name="cayenne pepper" />
+							<label for="cayenne-spice-opt">Cayenne Pepper</label>
+						</div>
+						<div class="option">
+							<input id="cinnamon-spice-opt" type="checkbox" name="cinnamon" />
+							<label for="cinnamon-spice-opt">Cinnamon</label>
+						</div>
+						<div class="option">
+							<input id="ginger-spice-opt" type="checkbox" name="ginger" />
+							<label for="ginger-spice-opt">Ginger</label>
+						</div>
+						<div class="option">
+							<input id="nutmeg-spice-opt" type="checkbox" name="nutmeg" />
+							<label for="nutmeg-spice-opt">Nutmeg</label>
+						</div>
+						<div class="option">
+							<input id="vanilla-extract-opt" type="checkbox" name="vanilla extract" />
+							<label for="vanilla-extract-opt">Vanilla extract</label>
+						</div>
+					</div>
 				</details>
+				<div id="spice-added"></div>
+				<div id="amount-select"></div>
 				<div class="form-btns">
 					<button id="cancel-btn">Cancel</button>
 					<input title="clear form" type="reset">
@@ -256,8 +320,8 @@
 				<div class="order_payment"></div>
 			</div>
 		</section>
-    </main>
-    <footer>
+	</main>
+	<footer>
 		<details>
 			<summary>Credits</summary>
 			<span>coffee by Gregor Cresnar from <a href="https://thenounproject.com/browse/icons/term/coffee/" target="_blank" title="coffee Icons">Noun Project</a> (CC BY 3.0)</span>
@@ -265,7 +329,7 @@
 			<span>bill by Arkinasi from <a href="https://thenounproject.com/browse/icons/term/bill/" target="_blank" title="bill Icons">Noun Project</a> (CC BY 3.0)</span>
 			<span>Coffee images from <a href="https://starbucks-menus.com/#Drinks" target="_blank">Starbucks</a>. This is not a commercial site, demo only.</span>
 		</details>
-    </footer>
-    <script type="module" src="/src/main.js"></script>
-  </body>
+	</footer>
+	<script type="module" src="/src/main.js"></script>
+</body>
 </html>

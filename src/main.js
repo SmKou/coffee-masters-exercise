@@ -1,19 +1,19 @@
 /**
  * Note: custom
- * Indicates a customization made to a product such as adding
- * to or modifying a selected product
+ * Indicates a customization as in adding to or modifying a
+ * selected product
  */
 
 import './style.css'
 
-const size = {
+const sizes = {
 	short: "Short (8 fl oz)",
 	tall: "Tall (12 fl oz)",
 	grande: "Grande (16 fl oz)",
 	venti: "Venti (20 fl oz)"
 }
 
-const amount = {
+const amounts = {
 	none: addon => "No " + addon,
 	little: addon => "Lite " + addon,
 	usual: addon => addon,
@@ -23,128 +23,10 @@ const amount = {
 const selection = {
 	item: "",
 	size: "",
-	custom: [],
-	free: []
-}
-const order = {}
-
-/**
- * Output:
- * size { HTMLElement[] }  size buttons to select a product
- *                         click: sets selected item and size
- */
-document.querySelectorAll("#prod figure").forEach(fig => {
-	const id = fig.id
-	Object.keys(size).forEach(size_abbr => {
-		const btn = document.createElement("button")
-		btn.setAttribute("title", size[size_abbr])
-		btn.append(document.createTextNode(size_abbr))
-		btn.addEventListener("click", () => {
-			const form = document.querySelector("#prod form")
-			if (form.classList.contains("hidden"))
-				form.classList.remove("hidden")
-			selection.item = id
-			selection.size = size_abbr
-		})
-		document.querySelector(`#${id} .size-btns`).append(btn)
-	})
-	const default_custom = document.querySelectorAll(`#${id} input[type="hidden"]`)
-	if (default_custom) {
-		// get value of hidden input
-		// mark corresponding customizations as checked
-		// if free: add to selection object
-		// account for user wanting both reg and substitute
+	custom: {
+		free: [],
+		paid: []
 	}
-})
-
-/**
- * Input:
- * name	{ string }  name of custom product selected on form
- * type { string }  type of custom product selected on form
- *                  can be found on details elements
- * Output:
- * field { HTMLElement }  fieldset containing radio btns
- *                        used to determine the amount of
- *                        user's selected custom
- *                        appended to corresponding details
- *                        element
- */
-const prompt_custom_amount = (name, type) => {
-	const field = document.createElement("fieldset")
-	field.class = "custom-amount"
-
-	const legend = document.createElement("legend")
-	const txt = `How much ${name} would you like?`
-	legend.append(document.createTextNode(txt))
-
-	field.append(legend)
-
-	const radio_btns = document.createElement("div")
-	Object.keys(amount).forEach(key => {
-		const amt = amount[key](name)
-
-		const ipt = document.createElement("input")
-		ipt.title = amt
-		ipt.id = `${name}-${type}-${key}`
-		ipt.type = "radio"
-		ipt.name = `${name}-${type}-amount`
-
-		const label = document.createElement("label")
-		label.for = ipt.id
-		label.append(document.createTextNode(amt))
-
-		radio_btns.append(ipt)
-		radio_btns.append(label)
-	})
-
-	field.append(radio_btns)
-
-	const add_btn = document.createElement("button")
-	add_btn.class = "add-btn"
-	add_btn.title = `Add ${amt} to ${selection.item}`
-	add_btn.addEventListener("click", () => {
-		const selected = document.querySelector(`input[name="${name}-${type}-amount"]:checked`)
-		if (selected) {
-			selection.custom.push(selected.amt)
-		}
-	})
 }
 
-const addon_amount = (name, type) => {
-	const field = document.createElement("fieldset")
-	field.setAttribute("class", "addon-amount")
-	const legend = document.createElement("legend")
-	legend.append(document.createTextNode("How much " + name + " would you like?"))
-	field.append(legend)
-
-	const radio_btns = document.createElement("div")
-	radio_btns.setAttribute("class", "addon-amount-btn")
-	Object.keys(amount).forEach(amt => {
-		const addon = amount[amt](name)
-		const ipt = document.createElement("input")
-		ipt.id = `${name}-${type}-${addon}`
-		ipt.type = "radio"
-		ipt.name = `${name}-${type}-addon`
-
-		const label = document.createElement("label")
-		label.setAttribute("for", ipt.id)
-		label.append(document.createTextNode(addon))
-
-	})
-
-	const add_btn = document.createElement("button")
-	add_btn.id = `${name}-${type}-addon`
-
-
-	document.querySelector("#" + type + "-addon").append(field)
-}
-
-// document.querySelectorAll("#prod form details").forEach(details => {
-// 	details.addEventListener("change")
-// })
-
-document.querySelector("#prod form").classList.remove("hidden")
-
-document.querySelector("#prod form").addEventListener("submit", e => {
-	e.preventDefault()
-})
+const order = {}

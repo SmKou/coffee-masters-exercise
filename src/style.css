@@ -93,18 +93,22 @@ main {
 		border-radius: 12px;
 		background: var(--box-background-color);
 
-		fieldset {
-			margin-top: 12px;
-		}
+		.options-container {
+			margin: 12px 0;
 
-		details {
-			margin-top: 12px;
-			display: flex;
+			details {
+				margin-top: 12px;
+			}
 
-			.options {
-				margin-left: 24px;
-				display: grid;
-				grid-template-columns: repeat(auto-fit, minmax(120px, 1fr))
+			div {
+				margin-top: 6px;
+				padding: 12px;
+				display: flex;
+				justify-content: space-between;
+
+				select {
+					padding: 4px 6px;
+				}
 			}
 		}
 
@@ -123,7 +127,7 @@ main {
 		}
 	}
 
-	#close-form-btn {
+	/*#close-form-btn {
 	width: 36px;
 	height: 36px;
 	border: none;

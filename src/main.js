@@ -30,3 +30,5 @@ const selection = {
 }
 
 const order = {}
+
+document.querySelector("dialog").showModal()

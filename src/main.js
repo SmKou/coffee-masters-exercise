@@ -6,13 +6,62 @@
 
 import './style.css'
 
-const selected_item = {
-	item: "",
-	size: "",
-	addons: {}
+const items = {
+	coffee: {
+		title: "Coffee",
+		img: "/Medium-Roast.png",
+		price: 3.50,
+		cal: 5
+	},
+	americano: {
+		title: "Caffe Americano",
+		img: "/Caffe-Americano.png",
+		price: 4.75,
+		cal: 5
+	},
+	latte: {
+		title: "Caffe Latte",
+		img: "/Caffe-Latte.png",
+		price: 6.50,
+		cal: 100
+	},
+	cappuccino: {
+		title: "Cappuccino",
+		img: "/Cappuccino.png",
+		price: 5.75,
+		cal: 70
+	},
+	cortado: {
+		title: "Cortado",
+		img: "/Cortado-starbucks.png",
+		price: 5.75,
+		cal: 90
+	},
+	macchiato: {
+		title: "Expresso Macchiato",
+		img: "/Espresso-Macchiato.png",
+		price: 3.75,
+		cal: 10
+	},
+	cdl: {
+		title: "Cinnamon Dolce Latte",
+		img: "/Cinnamon-Dolce-Latte.png",
+		price: 6.50,
+		cal: 190
+	},
+	ybt: {
+		title: "Yak Butter Tea",
+		img: "/Flat-White.png",
+		price: 7.50,
+		cal: 200
+	},
+	lol: {
+		title: "Lavender Oatmilk Latte",
+		img: "/Lavender-Oatmilk-Latte.png",
+		price: 6.50,
+		cal: 110
+	}
 }
-
-const order = {}
 
 const sizes = {
 	short: "Short (8 fl oz)",
@@ -21,85 +70,48 @@ const sizes = {
 	venti: "Venti (20 fl oz)"
 }
 
-const addons = {
-	foam: ["whip cream", "lavender", "peppermint", "salted caramel", "strawberry"],
-	dairy: ["milk", "chocolate milk", "dulce de leche", "sweetened condensed milk"],
-	dairy_alternative: ["almond milk", "coconut milk", "oatmilk"],
-	creamer: ["french vanilla", "hazelnut", "southern butter pecan"],
-	sweetener: ["sugar", "honey", "lavender syrup", "maple syrup", "pistachio syrup", "pumpkin syrup", "vanilla"],
-	spice: ["allspice", "almond extract", "cardamom", "cayenne pepper", "cinnamon", "ginger", "nutmeg", "vanilla extract"]
+const calories = (id) => `appr. ${items[id].cal} cal`
+
+const selected_item = {
+	item: "",
+	size: "",
+	addons: {}
 }
 
-const addon_amounts = {
+const order = {}
+
+const amounts = {
 	none: addon => "No " + addon,
 	little: addon => "Lite " + addon,
 	usual: addon => addon.slice(0,1).toUpperCase() + addon.slice(1),
 	a_lot: addon => "Extra " + addon
 }
 
-for (const addon of Object.keys(addons)) {
-	const addon_name = addon
-		.split("_")
-		.map(w => w
-			.slice(0,1)
-			.toUpperCase()
-			.concat(w.slice(1))
-		)
-		.join(" ")
-	const details_container = document.createElement("details")
-	const label = document.createElement("summary")
-	label.append(document.createTextNode(addon_name))
-	details_container.append(label)
-
-	const opts = addons[addon]
-	opts.forEach(opt => {
-		const option_container = document.createElement("div")
-
-		const name = opt.slice(0,1).toUpperCase() + opt.slice(1)
-		const item_name = document.createElement("span")
-		item_name.append(document.createTextNode(name))
-		option_container.append(item_name)
-
-		const id = opt
-			.split(" ")
-			.join("-")
-			.concat("-" + addon)
-		const amount_select = document.createElement("select")
-		amount_select.id = id
-		amount_select.name = opt
-
-		const blank_option = document.createElement("option")
-		blank_option.value = ""
-		amount_select.append(blank_option)
-
-		for (const amount of Object.keys(addon_amounts)) {
-			const option = document.createElement("option")
-			option.value = amount
-			option.append(
-				document.createTextNode(
-					amount
-					.split("_")
-					.join(" ")
-				))
-			amount_select.append(option)
-		}
-
-		amount_select.addEventListener("change", e => {
-			if (!e.value && selected_item.addons[opt]) {
-				delete selected_item.addons[opt]
-				amount.classList.remove("active-option")
-				return;
-			}
-			selected_item.addons[opt] = e.value
-			if (!amount.classList.contains("active-option"))
-				amount.classList.add("active-option")
+document.querySelectorAll('#product-grid figure').forEach(itm => {
+	itm.addEventListener("click", e => {
+		const item = items[e.id]
+		const img = document.querySelector(`#${e.id} img`)
+		img.title = item.title
+		img.alt = item.title
+		img.src = item.img
+		const size_btns = document.querySelector(`#${e.id} .size-btns`)
+		Object.keys(sizes).forEach(size => {
+			const btn = document.createElement("button")
+			btn.append(document.createTextNode(sizes[size]))
+			btn.addEventListener("click", () => {
+				selected_item.item = e.id
+				selected_item.size = size
+				document.querySelector("dialog").showModal()
+			})
+			size_btns.append(btn)
 		})
-		option_container.append(amount_select)
-		details_container.append(option_container)
+		document.querySelector(`#${e.id} h3`)
+			.append(document.createTextNode(item.title))
+		document.querySelector(`#${e.id} .price`)
+			.append(document.createTextNode("$" + item.price))
+		document.querySelector(`#${e.id} .calories`)
+			.append(document.createTextNode(calories(e.id)))
 	})
-	document.querySelector(".options-container").append(details_container)
-}
-
-
+})
 
 document.querySelector("dialog").showModal()
